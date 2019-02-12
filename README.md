@@ -10,3 +10,7 @@ npm t
 ```
 npm t -- --detectLeaks
 ```
+
+### babel-polyfill?
+
+Running `find . -type d -name '*babel-polyfill*' -print` doesn't find `babel-polyfill` anywhere in `node_modules`
