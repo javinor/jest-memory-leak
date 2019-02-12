@@ -1,21 +1,25 @@
-### Reproduce memory leak in Jest:
+## Reproduce memory leak in Jest
 
 ```
 npm i
 npm t
 ```
 
-### GC at end of each test is triggered by `--detectLeaks`:
+### Recreated without `babel-polyfill`
 
 ```
-npm t -- --detectLeaks
+find . -type d -name '*babel-polyfill*' -print
 ```
 
-### Troubleshooting
+### --harmony / --env=node still doesn't help
 
-Running `find . -type d -name '*babel-polyfill*' -print` doesn't find `babel-polyfill` anywhere in `node_modules`
-
-harmony / env=node still doesn't help:
 ```
 node --harmony ./node_modules/.bin/jest --no-polyfill --logHeapUsage --env=node
 ```
+
+### Suggested `setup.js` doesn't seem to help:
+
+```
+node --harmony node_modules/.bin/jest --env node --setupFilesAfterEnv ./setup.js --logHeapUsage
+```
+
