@@ -1,0 +1,14 @@
+{
+  "name": "jest_leak",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --logHeapUsage --runInBand --config=jest.config.js"
+  },
+  "dependencies": {
+    "jest": "^24.1.0",
+    "lodash": "^4.17.11",
+    "weak": "^1.0.1"
+  }
+}
