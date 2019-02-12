@@ -11,6 +11,11 @@ npm t
 npm t -- --detectLeaks
 ```
 
-### babel-polyfill?
+### Troubleshooting
 
 Running `find . -type d -name '*babel-polyfill*' -print` doesn't find `babel-polyfill` anywhere in `node_modules`
+
+harmony / env=node still doesn't help:
+```
+node --harmony ./node_modules/.bin/jest --no-polyfill --logHeapUsage --env=node
+```
