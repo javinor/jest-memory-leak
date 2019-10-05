@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest --logHeapUsage --runInBand --config=jest.config.js"
+    "prep": "node ./__test__/generateTests.js",
+    "test": "jest --max_old_space_size=50 -w=2 --logHeapUsage --config=jest.config.js"
   },
   "dependencies": {
-    "jest": "^24.1.0"
+    "jest": "*"
   }
 }
