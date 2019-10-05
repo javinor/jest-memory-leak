@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf ./__test__/dummy*.test.js",
     "prep": "node ./__test__/generateTests.js",
-    "test": "jest --max_old_space_size=50 -w=2 --logHeapUsage --config=jest.config.js"
+    "test": "node --max_old_space_size=50 ./node_modules/.bin/jest  -w=10 --logHeapUsage --config=jest.config.js",
+    "test:all-flags": "node --max_old_space_size=50 --heap-prof ./node_modules/.bin/jest  -w=2 --logHeapUsage --config=jest.config.js"
   },
   "dependencies": {
     "jest": "*"
